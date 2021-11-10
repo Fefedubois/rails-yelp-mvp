@@ -1,0 +1,18 @@
+<ul>
+<h4> <%= @restaurant.name %> </h4>
+<li> <%= "Adresse :" %>  <%= @restaurant.address %> </li>
+<li> <%= "Numéro de téléphone : " %><%= @restaurant.phone_number%> </li>
+<li> <%= "Catégorie : " %><%= @restaurant.category %> </li>
+</ul>
+
+<ul>
+<%= link_to("Retour à ma liste", restaurants_path) %>
+ <%= link_to("Ajouter votre commentaire", new_restaurant_review_path(@restaurant)) %>
+</ul>
+
+
+<p> <%= "Quelques commentaires.." %></p>
+<% @restaurant.reviews.each do |review| %>
+<li> <%= "Commentaire : " %> <%= review.content %> </li>
+<li> <%= "Note : " %> <%= review.rating %> <%= "/5" %>  </li>
+<% end %>

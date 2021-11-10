@@ -1,0 +1,10 @@
+<h4> Ajouter un nouveau restaurant </h4>
+<div class="mt-5">
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category, collection: Restaurant::CATEGORY%>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.button :submit, class: 'btn-primary mt-3' %>
+  <% end %>
+</div>
